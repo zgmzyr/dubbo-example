@@ -1,7 +1,10 @@
 package com.zyr.dubbo.common.service;
 
+import com.zyr.dubbo.common.domain.User;
+
 public interface UserReadService {
 	
-	query
+	public User queryUserById(int id);
 
+	public User queryUserByName(String name);
 }
