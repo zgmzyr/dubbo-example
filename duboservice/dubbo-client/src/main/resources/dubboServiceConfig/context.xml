@@ -1,53 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xmlns:context="http://www.springframework.org/schema/context"
+       
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-       http://code.alibabatech.com/schema/dubbo
-       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+       	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       
 
-    <description> dubbo client</description>
+    <description> </description>
     
     <context:component-scan base-package="com.zyr.dubbo.client" />
 
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <array>
-                <value>file:${appHome}/dubbo_service.properties</value>                
-            </array>
-        </property>
-        <property name="ignoreResourceNotFound" value="true" />
-        <property name="ignoreUnresolvablePlaceholders" value="true" />
-        <property name="properties" ref="defaultClientProperties" />
-    </bean>
-
-    <bean name="defaultClientProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
-        <property name="locations">
-            <array>
-                <value>
-                    classpath:/dubboServiceConfigDefault/dubbo_service.properties
-                </value>
-<!--                 <value> -->
-<!--                     classpath:/coreServiceClientConfigDefault/dubbo_coreservice.properties -->
-<!--                 </value> -->
-            </array>
-        </property>
-    </bean>
-
-    <dubbo:registry id="coreServiceClientRegistry"
-                    protocol="${coreservice.dubbo.registry.name}"
-                    client="${coreservice.dubbo.registry.client}"
-                    address="${coreservice.dubbo.registry.address}"
-                    group="dubboservice/coreservice/${coreservice.dubbo.registry.group}"
-                    check="${coreservice.dubbo.consumer.check}"
-                    subscribe="true" file="coreserviceclient-registry-cache.properties">
-    </dubbo:registry>
-
-    <dubbo:consumer id="coreserviceConsumer"
-                    registry="coreServiceClientRegistry"
-                    init="false"
-                    check="${coreservice.dubbo.consumer.check}"
-                    timeout="${coreservice.dubbo.consumer.timeout}"
-                    retries="0"/>
+    <import resource="classpath:/dubboServiceConfig/dubbo-config.xml"/>
+	<import resource="classpath:/dubboServiceConfig/dubbo-consumer.xml" />
+    
                     
 </beans>
