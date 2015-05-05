@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="65 seconds">
+
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+<!--     <appender name="defaultAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!-- 		<file>${catalina.home}/logs/coredefault.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/coredefault.log.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--     </appender> -->
+<!--      <appender name="dataChangeAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!-- 		<file>${catalina.home}/logs/dataChange.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/dataChange.log.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--     </appender> -->
+
+<!--     <appender name="proxoolAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!-- 		<file>${catalina.home}/logs/proxool.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/proxool.log.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--     </appender> -->
+    
+<!--     <appender name="processServiceAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!-- 		<file>${catalina.home}/logs/processService.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/proxool.log.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--     </appender> -->
+    
+    
+<!--     <appender name="stopWatchFile" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!-- 		<file>${catalina.home}/logs/stopWatchFile.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/stopWatchFile.log.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--     </appender> -->
+    
+<!-- 	<appender name="stopWatchFileCoalescingStatistics" class="org.perf4j.logback.AsyncCoalescingStatisticsAppender"> -->
+<!--             <param name="TimeSlice" value="43200000" /> -->
+<!--             <appender-ref ref="stopWatchFile" /> -->
+<!--     </appender> -->
+   <!-- PROFILER用于打内部执行时间的 -->
+<!--   <appender name="PROFILER" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!--        <file>${catalina.home}/logs/profiler.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/profiler.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--  </appender> -->
+ 
+<!--  <appender name="InvokeRecorder" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!--        <file>${catalina.home}/logs/invokeCounter.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/invokeCounter.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{MM-dd HH:mm:ss.SSS}) %-5thread %-5level %logger{1} - %msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--  </appender> -->
+ 
+<!--   <appender name="loginAppender" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!--        <file>${catalina.home}/logs/login.log</file> -->
+<!-- 		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"> -->
+<!-- 			<FileNamePattern>${catalina.home}/logs/login.%d{yyyy-MM-dd}</FileNamePattern> -->
+<!-- 		</rollingPolicy> -->
+<!-- 		<encoder> -->
+<!-- 			<pattern>%-16(%d{YYYY-MM-dd HH:mm:ss})|%msg%n</pattern> -->
+<!-- 		</encoder> -->
+<!--  </appender> -->
+ 
+<!--  <appender name="PROFILER-callMarkLog" class="ch.qos.logback.core.rolling.RollingFileAppender"> -->
+<!--      <Append>true</Append> -->
+<!--      <File>${catalina.home}/logs/profiler-callMark.log</File> -->
+<!--      <MaxFileSize>500KB</MaxFileSize> -->
+<!--      <MaxBackupIndex>50</MaxBackupIndex> -->
+<!--      <encoder> -->
+<!--        <pattern>%m%n</pattern> -->
+<!--        </encoder> -->
+<!--  </appender> -->
+
+
+<!--     <logger name="com.alibaba.dubbo" level="WARN"/> -->
+<!--     <logger name="com.caucho.hessian.server.InvokeRecorder" level="INFO"> -->
+<!--     	<appender-ref ref="InvokeRecorder"/> -->
+<!--     </logger> -->
+<!-- 	<logger name="org.springframework" level="info" /> -->
+<!-- 	<logger name="org.hibernate" level="info"  /> -->
+<!-- 	<logger name="stopWatchLogger" levle="info"> -->
+<!-- 		<appender-ref ref="stopWatchFileCoalescingStatistics" /> -->
+<!-- 	</logger> -->
+	<!-- aicai-profiler使用 -->
+<!-- 	<logger name="com.aicai.profiler.core.LogManagerImpl" level="INFO" additivity="false"> -->
+<!--    		<appender-ref ref="PROFILER"/> -->
+<!--  	</logger> -->
+ 	
+<!--  	<logger name="profiler.counter.log" level="INFO" additivity="false"> -->
+<!--    		<appender-ref ref="InvokeRecorder"/> -->
+<!--  	</logger> -->
+ 	
+<!--  	<logger name="profiler.callMark.log" level="INFO" additivity="false"> -->
+ 	
+<!--   		<appender-ref ref="PROFILER-callMarkLog"/> -->
+<!--  	</logger> -->
+ 	
+<!-- 	<logger name="org.logicalcobwebs.proxool" additivity="false"> -->
+<!-- 		<level value="info" /> -->
+<!-- 		<appender-ref ref="proxoolAppender" /> -->
+<!-- 	</logger> -->
+	
+<!-- 	<logger name="data_change_log" level="info"> -->
+<!-- 		<appender-ref ref="dataChangeAppender" /> -->
+<!-- 	</logger> -->
+	
+<!-- 	<logger name="login" level="info"> -->
+<!-- 		<appender-ref ref="loginAppender" /> -->
+<!-- 	</logger> -->
+	
+<!-- 	<logger name="processServiceAppender" level="info"> -->
+<!-- 		<appender-ref ref="processServiceAppender" /> -->
+<!-- 	</logger> -->
+	
+	<root level="WARN" >
+<!-- 		<appender-ref ref="defaultAppender" /> -->
+		<appender-ref ref="stdout" />
+	</root>
+</configuration>  
