@@ -8,7 +8,10 @@
        	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd"
     default-lazy-init="true">
     
-    <dubbo:application name="dubboWebWebApplication"  organization="zgm"  owner="zyr" logger="slf4j" />      
+<!--     <dubbo:application name="dubboWebApplication"  organization="zgm"  owner="zyr" logger="slf4j" -->
+<!--       monitor="zgmzyr" />       -->
+      
+      <dubbo:application name="dubboWebApplication"  organization="zgm"  owner="zyr" logger="slf4j" />
 
     <context:component-scan base-package="com.zyr.dubbo.web.manager">    
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
@@ -16,6 +19,10 @@
     
     <import resource="classpath:/dubboServiceConfig/context.xml"/>
     
+    
+    <!-- coreservice依赖 -->
+	<import resource="classpath*:remoting-core-service-client.xml" />
+	<import resource="classpath*:/coreServiceClientConfig/coreservice-client-context.xml" />
 	
     
 </beans>

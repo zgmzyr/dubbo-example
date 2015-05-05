@@ -12,13 +12,22 @@ import com.zyr.dubbo.common.service.UserReadService;
 @Controller
 public class UserController {
 	
-	@Resource(name = "userReadServiceClient")
+//	@Resource(name = "userReadServiceClient")
+	@Resource(name = "userReadService")
 	private UserReadService userReadService;
 	
 	@RequestMapping("user/queryUserById")
 	@ResponseBody
 	public String queryUserById(int id) {
 		User user = userReadService.queryUserById(id);
+		
+		return user.getName();
+	}
+	
+	@RequestMapping("user/queryUserByName")
+	@ResponseBody
+	public String queryUserByName(String name) {
+		User user = userReadService.queryUserByName(name);
 		
 		return user.getName();
 	}
